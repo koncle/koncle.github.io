@@ -1,0 +1,287 @@
+$link_blue: #0055AA;
+$color_bar: #265a8d;
+$fontsize_header: 17px;
+$fontsize_subhead: 16px;
+
+// Global settings
+.body {
+  margin-left: 0px;
+  margin-top: 0px;
+}
+
+.outer_container {
+  margin: auto;
+  padding: 0;
+  color: #000;
+  -webkit-transition: all;
+  -moz-transition: all;
+  -ms-transition: all;
+  -o-transition: all;
+  transition: all;
+  font-family: "Open Sans",
+    Segoe, "Segoe UI",
+    "Lucida Sans Unicode", "Lucida Grande",
+    "Avenir", "Seravek", "Ubuntu",
+    "DejaVu Sans", "Trebuchet MS", Verdana, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 160%;
+  text-align: justify;
+  font-weight: 400;
+  text-align: center
+}
+
+.bold {
+  font-weight: 900;
+}
+
+.title {
+  font-weight: 600;
+}
+
+// list style
+ul,
+ol,
+dl {
+  float: left;
+  margin: 0;
+  padding: 5px 10px 6px 30px;
+  width: calc(100% - 30px)
+}
+
+// img style
+img {
+  width: 100%;
+  height: auto;
+  display: block
+}
+
+// Link style
+a {
+
+  &:link,
+  &:visited {
+    color: #0055AA;
+    text-decoration: none
+  }
+
+  &:hover {
+    text-decoration: underline
+  }
+}
+
+/***
+Header 
+**/
+header {
+  width: 100%;
+  height: 50px;
+  margin-top: 0px;
+  text-align: center;
+  background-color: $color_bar;
+  position: fixed;
+  z-index: 2;
+  font-size: $fontsize_header;
+  line-height: 50px;
+}
+
+div.header {
+  line-height: 50px;
+}
+
+@mixin header_link {
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+div.header_left {
+  color: #FFF;
+  float: left;
+  padding-left: 15px;
+  font-size: 1.17em;
+  @include header_link;
+}
+
+div.header_right {
+  color: #FFF;
+  float: right;
+  padding-left: 10px;
+  padding-right: 20px;
+  font-weight: 500;
+  @include header_link;
+
+  &:hover {
+    background-color: #fff;
+
+    a {
+      color: $link_blue;
+    }
+  }
+}
+
+//  First Head section
+.subhead {
+  font-size: $fontsize_subhead;
+  font-weight: 600;
+}
+
+@mixin same_block {
+  display: inline-block;
+  zoom: 1;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle;
+  max-width: 960px
+}
+
+div.img,
+div.text {
+  @include same_block;
+  padding-left: 10px;
+  padding-right: 10px
+}
+
+
+div.container {
+  width: 100%;
+  min-width: 330px;
+  @include same_block;
+  padding-left: 10px;
+}
+
+.section {
+  @include same_block;
+  margin-bottom: 0px;
+
+  .sec_title {
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 26px;
+  }
+
+}
+
+
+div.heading {
+  text-align: left;
+  z-index: 1;
+  margin-top: 50px;
+
+  div.img {
+    padding: 30px 30px 30px 10px;
+    // max-width: 20%;
+
+    img {
+      width: 200px
+    }
+  }
+
+  span.tag {
+    padding-right: 15px
+  }
+
+  ul {
+    padding-bottom: 0px
+  }
+}
+
+/*
+Publication settings
+*/
+div.publication {
+  padding-top: 0px;
+  padding-bottom: 20px;
+
+  div.img {
+    max-width: 300px;
+    padding-right: 0px;
+    padding-top: 5px
+  }
+
+  div.text {
+    max-width: 650px;
+    text-align: left;
+    vertical-align: top
+  }
+}
+
+
+.authors {
+  font-size: 100%;
+  color: #777777;
+
+  .me {
+    color: #000000;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .author {
+    white-space: nowrap;
+  }
+}
+
+.gap-10 {
+  margin-top: -10px;
+}
+
+
+@media only screen and (max-width: 649px) {
+  div {
+    &.heading div.img {
+      display: block;
+      width: 400px;
+      img {
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
+    }
+
+    &.publication {
+      padding-top: 0px;
+      padding-bottom: 10px;
+
+      div.img {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: 80%;
+      }
+ 
+      div.text {
+        text-align: left
+      }
+    }
+  }
+
+  body {
+    font-size: 80%
+  }
+
+  .section {
+    padding-left: 10px;
+  }
+}
+
+
+@media only screen and (min-width: 650px) {
+  div.heading {
+    div.img {
+      padding-right: 35px;
+    }
+  }
+
+  div.publication {
+    div.img {
+      width: 23%
+    }
+
+    div.text {
+      max-width: 70%;
+      text-align: left
+    }
+  }
+}
