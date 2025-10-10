@@ -38,9 +38,9 @@
           </p>
           <div>PhD</div>
           <div><a href="https://cs.nju.edu.cn/rl/index.htm"> Reasoning & Learning Group</a> </div>
-          <div><a href="https://cs.nju.edu.cn/">Department of Computer Science and Technology</a></div>
-          <div><a href="https://www.nju.edu.cn/">Nanjing University</a>, Nanjing 210023, China</div>
-          <div>Email:&nbsp;<a href='mailto:zhangjian7369@smail.nju.edu.cn'>zhangjian7369@smail.nju.edu.cn</a></div>
+          <div><a href="https://is.nju.edu.cn/">School of Intelligence Science and Technology</a></div>
+          <div><a href="https://www.nju.edu.cn/">Nanjing University</a>, Suzhou 215163, China</div>
+          <div id="email2"></a></div>
           <p>
           </p>
         </div>
@@ -500,11 +500,13 @@
   <script>
     var scroll = new SmoothScroll('a[href*="#"]', { speed: 1000 });
 
-    (function(){
+    var f = function(id){
       const b64 = "emhhbmcuamlhbkBuanUuZWR1LmNu"; 
       const email = atob(b64);
-      document.getElementById("email").innerHTML = `<span class="bold">Email</span>: <a href="mailto:${email}">${email}</a>`;
-    })();
+      document.getElementById(id).innerHTML = `<span class="bold">Email</span>: <a href="mailto:${email}">${email}</a>`;
+    }
+    f("email");
+    f("email2");
   </script>
 </body>
 
